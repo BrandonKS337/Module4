@@ -55,8 +55,43 @@
     // addCards(data);
     //creates 2 cards, one for each item aka bob and alice cards adding in name and age because of params set up to be taken in
 
-//modified to help generate myultiple templates and populate the page dynamically Creats a profile card reping artist's portfolio
+    //modified to help generate myultiple templates and populate the page dynamically Creats a profile card reping artist's portfolio
+    const artist = {
+      name: "Van Gogh",
+      portfolio: [
+        {
+          title: "portrait",
+          url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image",
+        },
+        {
+          title: "sky",
+          url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
+        },
+      ],
+    };
 
+    function addProfileCard(artist) {
+      const template = document
+        .getElementById("profile-card-template")
+        .content.cloneNode(true);
+      template.querySelector(".card-title").innerText = artist.name;
+      template.querySelector(".card-description").innerText = "Artist";
+      document.querySelector("#profile-card").appendChild(template);
+    }
+
+    function addPortfolioCards(portfolio) {
+      const template = document.getElementById("portfolio-card-template");
+
+      portfolio.forEach((item) => {
+        const card = template.content.cloneNode(true);
+        card.querySelector(".card-title").innerText = item.title;
+        card.querySelector(".card-image").src = item.url;
+        document.querySelector("#portfolio-cards").appendChild(card);
+      });
+    }
+
+    addProfileCard(artist);
+    addPortfolioCards(artist.portfolio);
   </script>
 
   <body>

@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Moment DateTime Format</title>
+    <!-- reference Moment.js library -->
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <h2>Moment Date</h2>
+    <!-- container for Moment.js output -->
+    <div id="displayMoment"></div>
+    <h2>JavaScript Date</h2>
+    <!-- container for JavaScript Date output -->
+    <div id="displayJsDate"></div>
+
+    <h2>Year/Months/Days bDay to now</h2>
+    <div id="birthday"></div>
+
+    <h2>Closest date to today between two dates</h2>
+    <div id="closest date"></div>
+
+    <script type="text/javascript">
+      (function () {
+        const birthday = moment("1989-05-24", "YYYY-MM-DD");
+        const now = moment();
+        const nowMonth = moment().month();
+        console.log(nowMonth);
+        const diffYears = moment.duration(now.diff(birthday)).years();
+        const diffMonths = moment.duration(now.diff(birthday)).months();
+        const diffDays = moment.duration(now.diff(birthday)).days();
+        const birthDiv = document.getElementById("birthday");
+        birthDiv.innerHTML = `${diffYears} years, ${diffMonths} months, ${diffDays} days`;
+
+        const date1 = moment("2023-05-01", "YYYY-MM-DD");
+        const date2 = moment("2023-01-01", "YYYY-MM-DD");
+///////////////////////////PICKUP HERE/////////////////////////////////// Slide 86
+        //step 2 given two dates, display the date closest to the current date
+        const closestDate = 0
+        //look up easiest syntax for this...wake up idiot
+
+
+
+
+
+        ////////random stuff below added by original syntax///////////
+
+        // instantiate a moment object
+        var nowMoment = moment();
+
+        // instantiate a JavaScript Date object
+        var NowDate = new Date();
+
+        // display value of moment object in #displayMoment div
+        var eDisplayMoment = document.getElementById("displayMoment");
+        eDisplayMoment.innerHTML = nowMoment;
+
+        // display value of Date object in #displayJsDate div
+        var eDisplayDate = document.getElementById("displayJsDate");
+        eDisplayDate.innerHTML = now  //changed this portion to accomodate modified variable above
+      })();
+    </script>
+
+
+  </body>
+</html>
